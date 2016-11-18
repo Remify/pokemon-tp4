@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" media="screen" href="css/common.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="css/large.css" type="text/css" />
+    <link rel="stylesheet" media="print" href="css/print.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="css/smallToMedium.css" type="text/css" />
+    <script src="js/pokemon.class.js"></script>
+    <script src="js/pokemons.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/search.js"></script>
+    <title>Recherche</title>
+</head>
+
+<body onload="onLoadSearch()">
+<nav id="menu">
+</nav>
+<article id="recherche">
+    <div>Recherche :</div>
+   <input type="text" onkeyup="search()">
+    <div id="notice"></div>
+</article>
+<article>
+
+        <div id="PokemonContainer">
+        </div>
+</article>
+<footer>
+    <p>Images et sources : http://www.pokepedia.fr/</p>
+</footer>
+</body>
+
+</html>

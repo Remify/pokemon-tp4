@@ -1,0 +1,34 @@
+@media screen and (min-width: 980px) {
+  body {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  td .numPokemon, td .typePokemon, td h2 {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    float: right;
+    margin-top: 20px;
+  }
+  .btn a {
+    display: inline-block;
+  }
+
+  img {
+    float: left;
+  }
+
+  table img {
+    padding: 20px;
+  }
+  
+  .txtPokemon {
+    margin: 20px;
+    text-align: left;
+  }
+
+
+}

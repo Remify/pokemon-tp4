@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 400px;
+        }
+
+        div {
+            text-align: right;
+        }
+        *:required {
+            border-bottom: 2px solid orange;
+            border-right: 2px solid orange;
+        }
+
+
+        *:required:valid{
+            border-bottom: 2px solid green;
+            border-right: 2px solid green;
+        }
+
+        h1, legend {
+            color: blue;
+        }
+
+        fieldset {
+            -moz-border-radius:5px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px; //edit :D
+        }
+        input[type=number]{
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+<h1>Inscription</h1>
+<fieldset>
+    <legend>Identité</legend>
+    <div>
+        <span>Nom : </span><input type="text" placeholder="Ex : Dupont" required>
+    </div>
+    <div>
+        <span>Prénom : </span><input type="text" placeholder="Ex : Patrick" required>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Coordonées</legend>
+    <div>
+        <span>Adresse : </span><input type="text" placeholder="Ex : 3 rue d'ici">
+    </div>
+    <div>
+        <input type="text" placeholder="Ex : Allée de là">
+    </div>
+
+    <div>
+        <span>Code Postal : </span><input type="text" placeholder="Ex : 38000">
+    </div>
+    <div>
+        <span>Ville : </span><input type="text" placeholder="Ex : Grenoble">
+    </div>
+    <div>
+        <span>Téléphone : </span><input type="tel" placeholder="Ex : 04 66 57 87 45" pattern="^\+?\s*(\d+\s?){8,}$" required>
+    </div>
+    <div>
+        <span>Email : </span><input type="email" placeholder="Ex : remi@grenoble.fr">
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Enfants</legend>
+    <div>
+        <span>Nombre d'enfant : </span><input type="number" name="quantity" min="0" max="15" value="0" onchange="onChangeEnfants()">
+    </div>
+</fieldset>
+</body>
+<script>
+    function onChangeEnfants() {
+        var nbPicker = document.querySelector('input[type="number"]');
+        var div = nbPicker.parentNode.parentNode;
+
+
+        // ahah
+        clearChildrens(nbPicker.value);
+
+        div.appendChild(createHtmlEnfant(nbPicker.value));
+
+
+    }
+
+    function createHtmlEnfant(nb){
+
+        var child = document.getElementById('child'+nb);
+    var valReturn;
+
+        if(child) {
+            valReturn = undefined;
+        }else {
+            var divChildren = document.createElement('div');
+            divChildren.id = "child" + nb;
+            divChildren.innerText = "Prénom de l'enfant n°" + nb + " : ";
+            var inputChildren = document.createElement('input');
+            inputChildren.type = "text";
+            inputChildren.required = true;
+
+            divChildren.appendChild(inputChildren);
+
+            valReturn =  divChildren;
+        }
+
+        return valReturn;
+
+    }
+
+    function clearChildrens(nb) {
+        var child = document.getElementById('child'+nb++);
+        if(child) {
+            var parent = child.parentNode;
+            parent.removeChild(child);
+        }
+    }
+</script>
+</html>

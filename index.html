@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" media="screen" href="css/common.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="css/large.css" type="text/css" />
+    <link rel="stylesheet" media="print" href="css/print.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="css/smallToMedium.css" type="text/css" />
+    <script src="js/pokemon.class.js"></script>
+    <script src="js/pokemons.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/homepage.js"></script>
+    <title>Pokédex</title>
+</head>
+
+<body onload="onLoadHomePage()">
+    <nav id="menu">
+    </nav>
+
+    <article>
+        <h1>Pokédex</h1>
+        <section>
+            <div>
+                <p><img src="images/pokedex.png" alt="Pokedex"> Le Pokédex est un objet technologique fictif de l'univers Pokémon : il s'agit d'une encyclopédie recensant les créatures fictives connues éponymes. Il permet d'enregistrer les informations sur
+                    les Pokémon. Dans les jeux vidéo Pokémon, le but du joueur est de compléter le Pokédex en capturant l'ensemble des espèces de Pokémon disponibles
+                </p>
+            </div>
+
+        </section>
+
+        <section id="sectionPokemon">
+            <div class="navBtn" id="prevBtn"></div>
+            <div class="navBtn" id="nextBtn"></div>
+            <div id="PokemonContainer">
+
+            </div>
+        </section>
+    </article>
+    <footer>
+        <p>Images et sources : http://www.pokepedia.fr/</p>
+    </footer>
+</body>
+
+</html>

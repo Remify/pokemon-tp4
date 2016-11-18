@@ -1,0 +1,23 @@
+img {
+    float: left;
+    width: 100px;
+    padding: 30px;
+}
+
+nav {
+    display: none;
+}
+
+table {
+    position: relative;
+    margin: 0 auto;
+    width: 600px;
+}
+
+td {
+    height: 300px;
+}
+
+.numPokemon, .typePokemon {
+    clear: left;
+} 
