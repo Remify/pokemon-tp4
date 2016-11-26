@@ -10,7 +10,7 @@ class Pokemon {
         this.type = type;
         this.description = description;
         this.imageurl = imageUrl;
-        this.poid;
+        this.properties;
     }
 
     populateFromJson(json) {
@@ -19,12 +19,27 @@ class Pokemon {
         this.type = json.type;
         this.description = json.description;
         this.imageurl = json.image_url;
-        this.poid = json.poid;
+        this.properties = json.properties;
     }
 
     toHtml() {
         // Container pour le Pokemon
         var divPokemon = document.createElement('div');
+        divPokemon.className = 'pokemon-details';
+
+        // Intégration des datasets
+        divPokemon.dataset.num = this.num;
+        divPokemon.dataset.pokemon = this.nom.toLowerCase();
+        divPokemon.dataset.type = this.type.toLowerCase();
+
+        // Chaque propriété du pokemon et ajouté aux datasets
+        var obj = this.properties;
+        for (var key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                var valeur = obj[key];
+                divPokemon.setAttribute("data-" + key, valeur);
+            }
+        }
 
         // En tête Titre + Type + Num
         var divEnTete = document.createElement('div');
@@ -61,10 +76,28 @@ class Pokemon {
         divDescription.innerText = this.description;
 
 
+
+        // Affiche pour chaque propriétés le nom de la propriété et sa valeur
+        var divProperties = document.createElement('div');
+        var obj = this.properties;
+        for (var key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                var valeur = obj[key];
+
+                //
+                var divProperty = document.createElement('div');
+                divProperty.className = "pokemonProperty";
+                divProperty.innerHTML = "<b>" + key + " : </b>" + valeur;
+                divProperties.appendChild(divProperty);
+            }
+        }
+
+
         // Construction du div
         divPokemon.appendChild(divEnTete);
         divPokemon.appendChild(imgDiv);
         divPokemon.appendChild(divDescription);
+        divPokemon.appendChild(divProperties);
 
         return divPokemon;
     }
@@ -72,11 +105,11 @@ class Pokemon {
     toHtmlGrid() {
         var divPokemon = document.createElement('div');
         divPokemon.className = "grid-pokemon";
-        divPokemon.dataset.pokemon = this.nom.toLowerCase();
-        divPokemon.dataset.type = this.type.toLowerCase();
-        divPokemon.dataset.poid = this.poid;
+        divPokemon.dataset.num = this.num;
 
-        var titre = document.createElement('div');
+
+
+                var titre = document.createElement('div');
         titre.className = "nom";
         titre.innerHTML = this.nom;
         divPokemon.dataset.nom = this.nom;

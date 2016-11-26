@@ -23,6 +23,15 @@ function onLoadHomePage() {
 
     // Chargement du menu
     loadMenu();
+
+    // Current menu item
+    // border-bottom rouge sur menu
+    var menuLinks = document.getElementById('menu').querySelectorAll('a');
+    menuLinks.forEach(function(link){
+        if(link.innerText.indexOf('Index') >= 0) {
+            link.className = 'current';
+        }
+    });
 }
 
 /*

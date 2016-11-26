@@ -209,10 +209,15 @@ p a:visited {
     background-position: center;
 }
 
+/*
+*       SEARCH.HTML
+*/
+
 #recherche input {
-    width:100%;
+    width:95%;
     height: 40px;
     font-size: 2em;
+    float: left;
 }
 
 section.pokemon {
@@ -222,5 +227,22 @@ section.pokemon {
 
 .pokemon .img-pokemon {
     width: 100px;
+}
+
+.pokemonProperty:first-letter {
+    text-transform:capitalize;
+}
+#PokemonContainer .grid-pokemon {
+    float: none;
+    display: inline-block;
+
+    font-weight: bold;
+    text-align: center;
+}
+#PokemonContainer .pokemon-details {
+    float: left;
+    background-color: #eee;
+    padding: 10px;
+    margin:10px 0;
 }
 

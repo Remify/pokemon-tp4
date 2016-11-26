@@ -4,6 +4,7 @@
  */
 pokemons = [];
 
+// Chargement des pokemons à partir du json
 dataPokemons.pokemons.forEach(function(jsonPokemon){
     var poke = new Pokemon();
     poke.populateFromJson(jsonPokemon);
@@ -99,6 +100,15 @@ function getQueryParams(qs) {
  */
 function onLoadPokemon(){
     loadMenu();
+
+    // Current menu item
+    // border-bottom rouge sur menu
+    var menuLinks = document.getElementById('menu').querySelectorAll('a');
+    menuLinks.forEach(function(link){
+        if(link.innerText.indexOf('Pokemons') >= 0) {
+            link.className = 'current';
+        }
+    });
 
     // récupère les paramètres d'url
     var query = getQueryParams(document.location.search);
