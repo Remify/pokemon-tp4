@@ -246,3 +246,12 @@ section.pokemon {
     margin:10px 0;
 }
 
+
+#help .btn {
+    margin: 0;
+}
+
+#help a {
+    height:25px;
+}
+

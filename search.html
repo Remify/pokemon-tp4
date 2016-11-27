@@ -21,8 +21,26 @@
 <nav id="menu">
 </nav>
 <article id="recherche">
+
+
+    </div>
     <div>Recherche :</div>
-   <input type="text" onkeyup="search()"><div id="help">?</div>
+   <input type="text" onkeyup="search()">
+    <div id="help">
+        <div class="btn"><a class="btn-lien" href="#" onclick="displayHelp()">?</a></div><br/>
+        <ul style="display: none;"><br/>
+            <li>Faites une recherche par mot clé. <br>
+                <b>"bleu"</b></li>
+            <li>Faites une recherche sur un paramètre (couleur, taille, poid, type). <br>
+                <b>"couleur = bleu" </b></li>
+            <li>Faites une recherche avec un opérateur ( ">", ">=", "<", "<=") : <br/>
+                <b>"Taille > 50" ; "Taille >= 50"</b>
+            </li>
+            <li>Recherche multiple ( &&, ||, not ) :<br/>
+                <b>"Taille >= 50 && Couleur = Bleu" ; "Couleur=bleu NOT Poid>90"</b>
+            </li>
+
+        </ul>
     <div id="notice"></div>
 </article>
 <article>
